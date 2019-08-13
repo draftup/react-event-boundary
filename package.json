@@ -1,0 +1,59 @@
+{
+  "name": "react-event-boundary",
+  "version": "0.0.1",
+  "description": "Respond to user actions in easy and scalable way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/index.tsx --out-file index.js",
+    "style:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
+    "style:write": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "commitlint": "commitlint from=HEAD"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draftup/react-event-boundary.git"
+  },
+  "keywords": [
+    "react",
+    "event"
+  ],
+  "author": "negamaxi@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/draftup/react-event-boundary/issues"
+  },
+  "homepage": "https://github.com/draftup/react-event-boundary#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "husky": "^3.0.3",
+    "lint-staged": "^9.2.1",
+    "prettier": "1.18.2",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "semantic-release": "^15.13.21"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

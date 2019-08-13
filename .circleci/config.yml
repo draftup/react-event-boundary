@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run style:check
+      - run: npm run build
+      # - run: npm test
+      - run: npm run commitlint
+      - run: npx semantic-release
