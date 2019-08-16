@@ -6,7 +6,7 @@ Respond to user actions in easy and scalable way.
 
 ```bash
 
-npm i -S @draftup/react-event-boundary
+npm i -S react-event-boundary
 
 ```
 
@@ -17,7 +17,7 @@ To use event boundary in your React project you first need to create one.
 Boundary creator accepts a single context that will be used to pass dispatch function down through your React tree:
 
 ```javascript
-import { createEventBoundary } from "@draftup/react-event-boundary";
+import { createEventBoundary } from "react-event-boundary";
 
 const DispatchContext = React.createContext(event => console.log(event));
 
