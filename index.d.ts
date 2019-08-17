@@ -6,9 +6,9 @@ type EventBoundary<Event> = FC<{
   handler: Handler<Event>;
 }>;
 
-type TDispatch<Event> = (event: Event) => void;
+type Dispatch<Event> = (event: Event) => void;
 
-type DispatchContext<Event> = Context<TDispatch<Event>>;
+type DispatchContext<Event> = Context<Dispatch<Event>>;
 
 export function createEventBoundary<Event>(
   DispatchContext: DispatchContext<Event>
