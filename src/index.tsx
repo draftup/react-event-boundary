@@ -1,26 +1,25 @@
 import React from "react";
 
-// Types
+import { DispatchContext, EventBoundary } from "..";
 
-type EventBoundary<Event> = React.FC<{
-  handler: React.Dispatch<Event>;
-}>;
-
-type DispatchContext<Event> = React.Context<React.Dispatch<Event>>;
-
-export type EventBoundaryCreator = <Event>(
-  DispatchContext: DispatchContext<Event>
-) => EventBoundary<Event>;
-
-// Utils
-
+/**
+ * A custom error class.
+ */
 class EventBoundaryError extends Error {}
 
-// Lib
-
+/**
+ * @function createEventBoundary - function that can be used to create event boundary.
+ *
+ * @param DispatchContext - a React context instance that will be used to pass dispatch function down through your React tree.
+ */
 export function createEventBoundary<Event>(
   DispatchContext: DispatchContext<Event>
 ) {
+  /**
+   * @function EventBoundary - functional React component that can be used to catch events dispatched from a child component tree.
+   *
+   * @param handler - a function that will handle dispatched events locally.
+   */
   const EventBoundary: EventBoundary<Event> = props => {
     const { children, handler: localHandler } = props;
 
