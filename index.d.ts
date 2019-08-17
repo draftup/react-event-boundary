@@ -1,12 +1,14 @@
-type THandler<Event> = (event: Event) => void;
+import { FC, Context } from "react";
 
-type EventBoundary<Event> = React.FC<{
-  handler: THandler<Event>;
+type Handler<Event> = (event: Event) => void;
+
+type EventBoundary<Event> = FC<{
+  handler: Handler<Event>;
 }>;
 
 type TDispatch<Event> = (event: Event) => void;
 
-type DispatchContext<Event> = React.Context<TDispatch<Event>>;
+type DispatchContext<Event> = Context<TDispatch<Event>>;
 
 export function createEventBoundary<Event>(
   DispatchContext: DispatchContext<Event>
