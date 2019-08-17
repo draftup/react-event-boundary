@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/draftup/react-event-boundary/compare/v1.0.2...v1.0.3) (2019-08-17)
+
+
+### Bug Fixes
+
+* changes use of react types inside typescript and flow typings ([a8bd24d](https://github.com/draftup/react-event-boundary/commit/a8bd24d))
+
 ## [1.0.2](https://github.com/draftup/react-event-boundary/compare/v1.0.1...v1.0.2) (2019-08-17)
 
 ### Bug Fixes
