@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/draftup/react-event-boundary/compare/v1.0.5...v1.0.6) (2019-08-18)
+
+
+### Bug Fixes
+
+* reduce bundle size using webpack ([234429b](https://github.com/draftup/react-event-boundary/commit/234429b))
+
 ## [1.0.5](https://github.com/draftup/react-event-boundary/compare/v1.0.4...v1.0.5) (2019-08-18)
 
 ### Bug Fixes
