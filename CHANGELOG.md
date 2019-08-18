@@ -1,9 +1,8 @@
 ## [1.0.4](https://github.com/draftup/react-event-boundary/compare/v1.0.3...v1.0.4) (2019-08-17)
 
-
 ### Bug Fixes
 
-* update README.md with codesandbox examples ([640de62](https://github.com/draftup/react-event-boundary/commit/640de62))
+- update README.md with codesandbox examples ([640de62](https://github.com/draftup/react-event-boundary/commit/640de62))
 
 ## [1.0.3](https://github.com/draftup/react-event-boundary/compare/v1.0.2...v1.0.3) (2019-08-17)
 
