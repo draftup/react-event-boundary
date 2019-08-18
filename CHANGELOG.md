@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/draftup/react-event-boundary/compare/v1.0.4...v1.0.5) (2019-08-18)
+
+
+### Bug Fixes
+
+* update .npmignore to exclude all unnecessary files ([9656e6b](https://github.com/draftup/react-event-boundary/commit/9656e6b))
+
 ## [1.0.4](https://github.com/draftup/react-event-boundary/compare/v1.0.3...v1.0.4) (2019-08-17)
 
 ### Bug Fixes
