@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "babel src/index.tsx --out-file index.js",
+    "build": "webpack",
     "style:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
     "style:write": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "commitlint": "commitlint from=HEAD"
@@ -38,17 +38,19 @@
     "@types/jest": "^24.0.17",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "babel-loader": "^8.0.6",
     "husky": "^3.0.3",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.1",
+    "peer-deps-externals-webpack-plugin": "^1.0.4",
     "prettier": "1.18.2",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "semantic-release": "^15.13.21"
+    "semantic-release": "^15.13.21",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "peerDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react": "^16.3.0"
   },
   "husky": {
     "hooks": {
