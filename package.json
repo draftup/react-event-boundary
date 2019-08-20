@@ -1,6 +1,6 @@
 {
   "name": "react-event-boundary",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Respond to user actions in easy and scalable way.",
   "main": "index.js",
   "scripts": {
