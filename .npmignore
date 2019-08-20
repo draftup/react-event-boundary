@@ -1,8 +1,9 @@
 *
-!CHANGELOG.md
-!index.js
-!index.d.ts
-!index.js.flow
-!LICENSE
-!package.json
-!package-lock.json
+!/README.md
+!/LICENSE
+!/CHANGELOG.md
+!/index.js
+!/index.d.ts
+!/index.js.flow
+!/package.json
+!/package-lock.json

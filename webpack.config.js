@@ -6,17 +6,18 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname),
-    filename: 'index.js'
+    filename: 'index.js',
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
-        {
-            test: /\.tsx?$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-            }
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
         }
+      }
     ]
   },
   plugins: [
