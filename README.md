@@ -1,6 +1,6 @@
 # React event boundary
 
-Simple and scalable event system for React projects.
+Event propagation system for React.
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
@@ -14,7 +14,7 @@ npm i -S react-event-boundary
 
 ## Highlights
 
-- Build to work with existing React state management solutions.
+- Build to work with React state management APIs, not to replace them.
 - Typescript and Flow type definitions included.
 
 ## Usage
@@ -74,13 +74,13 @@ const Button = () => {
 };
 ```
 
-Any event bubbles up to the highest boundary in your tree. Therefore it becomes easy to handle a single event at different levels. See the working example on a codesandox:
+`EventBoundary` is meant to be used many times at differnet levels of your application. Dispatched events will bubble up through all of the boundaries on the way, which makes it easy to affect multiple local states using a single event. See the working example on a codesandox:
 
 [![Edit react-event-boundary demo (useState)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-event-boundary-demo-usestate-qsiso?fontsize=14)
 
 ---
 
-For complex state management scenarios you may want to replace `React.useState()` with `React.useReducer()`. It's straitforward to use this approach with event boudary:
+For complex state management scenarios you may want to replace `React.useState()` with `React.useReducer()`. It's straitforward to use this approach with event boudary too:
 
 ```jsx
 const reducer = (state, event) => {
@@ -116,6 +116,44 @@ const Root = () => {
 See the working example on a codesandox:
 
 [![Edit react-event-boundary demo (useReducer)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-event-boundary-demo-usereducer-pxrgr?fontsize=14)
+
+## Testing
+
+To test events dispatched from the component just wrap this component with `EventBoundary` and pass a spy function as a handler. This function will store the last intercepted event so you can easily test it:
+
+```javascript
+// This example uses jest and react-testing-library.
+
+const Component = () => {
+  const dispatch = React.useContext(DispatchContext);
+
+  const handleButtonClick = React.useCallback(() => {
+    dispatch("BUTTON_CLICKED");
+  }, [dispatch]);
+
+  return (
+    <button onClick={handleButtonClick} data-testid="COMPONENT_BUTTON">
+      test
+    </button>
+  );
+};
+
+test("test button click", () => {
+  const handleEvent = jest.fn();
+
+  const mounted = render(
+    <EventBoundary handler={handleEvent}>
+      <Component />
+    </EventBoundary>
+  );
+
+  fireEvent.click(mounted.getByTestId("COMPONENT_BUTTON"));
+
+  expect(handleEvent).toBeCalledWith("BUTTON_CLICKED");
+});
+```
+
+That's it. Components that use `EventBoundary` to handle events and perform local state mutations should be tested as a regular "black box" React components.
 
 ## License
 

@@ -1,9 +1,8 @@
 ## [1.0.7](https://github.com/draftup/react-event-boundary/compare/v1.0.6...v1.0.7) (2019-08-20)
 
-
 ### Bug Fixes
 
-* use correct library target for webpack ([33a170e](https://github.com/draftup/react-event-boundary/commit/33a170e))
+- use correct library target for webpack ([33a170e](https://github.com/draftup/react-event-boundary/commit/33a170e))
 
 ## [1.0.6](https://github.com/draftup/react-event-boundary/compare/v1.0.5...v1.0.6) (2019-08-18)
 
